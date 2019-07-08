@@ -1,15 +1,9 @@
 <?php
 require '../vendor/autoload.php';
 
-// @NOTE: The credientials file holds just 3 variables needed for the API to return data.
-// Copy/paste the variables below into a PHP file named "credentials.php" in the same directory as
-// ajax.php and edit to include your own info.
+// @NOTE: Edit "weather-config-sample.php" to include your own info and rename it to "weather-config.php" 
 
-// $dark_sky_api_key = '68aef0fda19b6c9c8ebc9ae8ee43343c'; // Your Dark Sky API key.
-// $forecast_latitude = 40.730610; // Decimal notation of forecast point latitude.
-// $forecast_longitude = -73.935242; // Decimal notation of forecast point longitude.
-
-require 'credentials.php';
+require 'weather-config.php';
 
 if( isset( $_GET['action'] ) && $_GET['action'] !== '' ){
 	$ajax_action = $_GET['action'];

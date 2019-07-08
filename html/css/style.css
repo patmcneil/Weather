@@ -147,34 +147,34 @@ body {
   background-size: 90%; }
 
 .clear-day {
-  background-image: url("/images/icons/Sun.svg"); }
+  background-image: url("../images/icons/Sun.svg"); }
 
 .clear-night {
-  background-image: url("/images/icons/Moon.svg"); }
+  background-image: url("../images/icons/Moon.svg"); }
 
 .partly-cloudy-day {
-  background-image: url("/images/icons/Cloud-Sun.svg"); }
+  background-image: url("../images/icons/Cloud-Sun.svg"); }
 
 .partly-cloudy-night {
-  background-image: url("/images/icons/Cloud-Moon.svg"); }
+  background-image: url("../images/icons/Cloud-Moon.svg"); }
 
 .cloudy {
-  background-image: url("/images/icons/Cloud.svg"); }
+  background-image: url("../images/icons/Cloud.svg"); }
 
 .rain {
-  background-image: url("/images/icons/Cloud-Drizzle.svg"); }
+  background-image: url("../images/icons/Cloud-Drizzle.svg"); }
 
 .sleet {
-  background-image: url("/images/icons/Cloud-Hail.svg"); }
+  background-image: url("../images/icons/Cloud-Hail.svg"); }
 
 .snow {
-  background-image: url("/images/icons/Cloud-Snow.svg"); }
+  background-image: url("../images/icons/Cloud-Snow.svg"); }
 
 .wind {
-  background-image: url("/images/icons/Wind.svg"); }
+  background-image: url("../images/icons/Wind.svg"); }
 
 .fog {
-  background-image: url("/images/icons/Cloud-Fog.svg"); }
+  background-image: url("../images/icons/Cloud-Fog.svg"); }
 
 #current-temp {
   font-size: 200px; }
