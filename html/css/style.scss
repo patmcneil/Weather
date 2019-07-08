@@ -1,0 +1,238 @@
+// @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
+
+html{
+	font-size:18px; line-height:1;
+}
+
+html,body{
+	height:100%; overflow:hidden;
+}
+
+body{
+	font-family: 'Cabin', sans-serif;  padding:80px; background-color:#eaeaea; color:#000;
+	transition-property:background-color,color;
+	transition-duration:10s; transition-timing-function:ease;
+
+	//background:url('https://images.unsplash.com/photo-1560346983-ffa0a154e978?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1884&q=80') center no-repeat; background-size:cover;
+	
+	// sunny
+	// https://images.unsplash.com/photo-1474174444668-bfc40156c277?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80
+	
+	// cloudy
+	// https://images.unsplash.com/photo-1560346983-ffa0a154e978?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1884&q=80;
+
+	&.warm{
+		background-color:#fbe9d6;
+	}
+
+	&.dark{
+		background-color:#333; color:#eaeaea;
+	}
+}
+
+.lh-1{
+	line-height:1
+}
+
+#ajax-loader{
+	position:absolute; top:10px; width:45px; left:0; right:0; margin:auto; z-index:9999;
+}
+
+#alert-row{
+	position:absolute; bottom:0; left:0; right:0; width:100%; font-size:20px; z-index:10;
+
+	.weather-alert{
+		padding:15px; border-bottom:2px solid #fff; overflow:hidden; height:63px;
+
+		&:last-of-type{
+			border-bottom:none;
+		}
+
+		&.warning{
+			background:#ad3030; color:#fff;
+		}
+
+		&.watch{
+			background:#ffc061; color:#333;
+		}
+
+		&.advisory{
+			background:#8eb0ce; color:#333;
+		}
+
+		// p{
+		// 	white-space:nowrap; position:absolute; left:20px; transition:all 10s ease;
+		// }
+	}
+
+	
+}
+
+#primary-row{
+	margin:0;
+}
+
+#secondary-row{
+	margin:35px 0; background:rgba(255,255,255,0.5); padding:30px 0; border-radius:10px; border:1px solid #ccc;
+}
+
+#tertiary-row{  }
+
+.temp{
+	position:relative;
+
+	&:after{
+		content:"\00B0";
+	}
+
+	&.high{
+		//color:red;
+	}
+
+	&.low{
+		//color:blue;
+	}
+}
+
+
+#current-humidity,
+#current-pressure,
+#current-wind{
+	font-size:21px;
+}
+
+#current-wind{
+	position:relative;
+
+	.wind-dir{
+		position:absolute; display:inline-block; top:5px; margin-left:10px; transform-origin:center;
+		width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:22px solid #333;
+	}
+}
+
+#current-pressure{
+	.gauge{
+		display:inline-block; position:relative; top:1px; border:1px solid #bdbdbd; height:15px; width:100px; margin-left:8px;
+
+		.previous{
+			position:absolute; left:0; top:0; height:100%; width:0%; background:#4c4f79;
+		}
+
+		.current{
+			position:absolute; left:0; top:0; height:100%; width:0%; background:#9ba0e8;
+		}
+
+		.previous-max{
+		// This marker indicates the upper limit of the previous period's pressure, so that
+		// any new pressure increase will slide beneath it, and it will show a filled bar under it.
+			content:""; position:absolute; width:0; border-left:1px solid #fff; border-right:1px solid #fff; top:0; bottom:0; left:0%;
+		}
+
+		span{
+			position:absolute; top:16px; left:0; right:0; font-size:14px;
+		}
+	}
+}
+
+
+#current-weather-icon,
+#home-icon{
+	.icon{
+		height:200px; margin:0 auto; background-position:center; background-size:contain; background-repeat:no-repeat;
+	}
+}
+
+.forecast-weather-icon{
+	height:100px; width:100px; margin:0 auto; background-position:center; background-repeat:no-repeat; background-size:90%;
+}
+
+.clear-day{
+	background-image:url("/images/icons/Sun.svg");
+}
+.clear-night{
+	background-image:url("/images/icons/Moon.svg");
+}
+.partly-cloudy-day{
+	background-image:url("/images/icons/Cloud-Sun.svg");
+}
+.partly-cloudy-night{
+	background-image:url("/images/icons/Cloud-Moon.svg");
+}
+.cloudy{
+	background-image:url("/images/icons/Cloud.svg");
+}
+.rain{
+	background-image:url("/images/icons/Cloud-Drizzle.svg");
+}
+.sleet{
+	background-image:url("/images/icons/Cloud-Hail.svg");
+}
+.snow{
+	background-image:url("/images/icons/Cloud-Snow.svg");
+}
+.wind{
+	background-image:url("/images/icons/Wind.svg");
+}
+.fog{
+	background-image:url("/images/icons/Cloud-Fog.svg");
+}
+
+
+#current-temp{
+	font-size:200px;
+}
+
+#current-time-date{
+	.day,
+	.date{
+		font-size:30px;
+	}
+
+	.time{
+		font-size:100px;
+	}
+}
+
+.hourly-forecast-bucket{
+	border-right:1px solid #ccc;
+
+	&:last-of-type{
+		border-right:none;
+	}
+	
+	.time{
+		font-size:20px; line-height:1;
+	}
+
+	.temp{
+		font-size:40px; line-height:1;
+	}
+
+	.precip-chance{
+		font-size:18px; line-height:1;
+		&.low{
+			color:#ccc;
+		}
+	}
+}
+
+.daily-forecast-bucket{
+	.daily-wrap{
+	 	background:rgba(255, 255, 255, 0.5); border-radius:10px;padding:30px; border:1px solid #ccc;
+	}
+
+	h3{
+		border-bottom:1px solid #ccc;
+	}
+
+	.forecast-weather-icon{
+		background-size:100%;
+	}
+
+	.precip-chance{
+		&.low{
+			color:#ccc;
+		}
+	}
+}
